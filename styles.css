@@ -53,11 +53,13 @@ form button {
     align-items: center;
 }
 
-.todo li{
+.todo li {
     flex: 1;
     border: 0.5px #b3aeae solid;
-    padding: 0.66rem;
+    padding: 0.68rem;
+   
 }
+
 
 .trash-Btn , .complete-Btn{
     background: #ff6f47;
@@ -87,5 +89,8 @@ form button {
 @media screen and (max-width: 768px){
     .todo-list{
         min-width: 75%;
+    }
+    form input, form button {
+    font-size: 1.75rem;
     }
 }
