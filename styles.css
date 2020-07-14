@@ -56,8 +56,13 @@ form button {
 .todo li {
     flex: 1;
     border: 0.5px #b3aeae solid;
-    padding: 0.68rem;
+    /* padding: 0.68rem; */
    
+}
+
+.todo li, .complete-Btn, .trash-Btn{
+    font-size: 1.25rem;
+    padding: 0.75rem;
 }
 
 
@@ -65,9 +70,9 @@ form button {
     background: #ff6f47;
     border: none;
     color: white;
-    padding: 1rem;
     cursor: pointer;
-    font-size: 1rem;
+    padding: 0.82rem;
+    
 }
 
 .complete-Btn{
