@@ -23,7 +23,13 @@ function addTodo (e){
     
     //create an li and append it to the newTodo
     const todoLi = document.createElement('li');
-    todoLi.innerText = todoInput.value
+    if (todoInput.value !=='' || todoInput.value === null){
+        todoLi.innerText = todoInput.value
+    }
+    else{
+        return 
+    }
+    
     todoLi.classList.add('todo-item');
     todoDiv.appendChild(todoLi);
 
@@ -46,7 +52,7 @@ function addTodo (e){
 
     // theme display 
     if (!body.classList['dark']){
-        todoLi.classList.add('dark-li')
+        todoLi.classList.add('dark-li') 
     }
     //remove input value 
 
