@@ -1,11 +1,17 @@
 const todoBtn = document.querySelector('.todo-button');
 const todoInput = document.querySelector('.todo-input');
 const todoList = document.querySelector('.todo-list')// where we will append our data too 
+const body = document.querySelector('body');
+const themeBtn = document.querySelector('.theme-btn');
+const title = document.querySelector('.title');
+
+let theme = "white"
 
 // event listeners
 document.addEventListener('DOMContentLoaded', getTodos)
 todoBtn.addEventListener('click', addTodo);
 todoList.addEventListener('click', clearTodo)
+themeBtn.addEventListener('click', darkTheme);
 
 
 function addTodo (e){
@@ -38,10 +44,15 @@ function addTodo (e){
     // final append to the todoList UL
     todoList.appendChild(todoDiv)
 
+    // theme display 
+    if (!body.classList['dark']){
+        todoLi.classList.add('dark-li')
+    }
     //remove input value 
 
     todoInput.value = ''
 
+    
 
 }
 
@@ -95,6 +106,7 @@ function getTodos (){
         //create an li and append it to the newTodo
         const todoLi = document.createElement('li');
         todoLi.innerText = todo
+        todoLi.classList.add('dark-li')
         todoLi.classList.add('todo-item');
         todoDiv.appendChild(todoLi);
 
@@ -134,3 +146,17 @@ function removeLocalTodos (todo) {
     localStorage.setItem('storage', JSON.stringify(storage))
 }
 
+
+function darkTheme() {
+    body.classList.toggle('dark');
+    if (body.classList[0] === 'dark' ){
+        title.style.color = 'white'
+        todoBtn.style.backgroundColor = '#1A2735';
+        todoBtn.style.color = 'white'
+    } else{
+        title.style.color = 'black'
+        todoBtn.style.backgroundColor = 'white';
+        todoBtn.style.color = 'black'
+    }
+    
+}
