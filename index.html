@@ -1,40 +1,53 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="manifest" href="./site.webmanifest" />
     <script src="https://use.fontawesome.com/c41250b912.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
     <title>To Do List</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <button data-modal-target="#modal" class="setting-btn">
+      <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+    </button>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="modal-title">Settings</div>
+        <button data-close-button class="close-modal-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="darktheme-setting">
+          <p>Dark Theme</p>
+          <div class="change-theme-btn"></div>
+          <input class="theme-btn2" type="checkbox" />
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+
     <header>
-        <h1 class="title">
-            ToDo List
-        </h1>
-        <button class="theme-btn">
-            <i class="fa fa-moon-o" aria-hidden="true"></i>
-            <i class="fa fa-sun-o" aria-hidden="true"></i>
-        </button>
+      <h1 class="title">
+        ToDo List
+      </h1>
     </header>
     <form>
-        <input class="todo-input" type="text" placeholder="I want to...">
-        <button type="submit" class="todo-button">
-            <i class="fa fa-plus todo-addItem"></i>
-        </button>
-
+      <input class="todo-input" type="text" placeholder="I want to..." />
+      <button type="submit" class="todo-button">
+        <i class="fa fa-plus todo-addItem"></i>
+      </button>
     </form>
     <div class="todo-container">
-        <ul class="todo-list"></ul>
+      <ul class="todo-list"></ul>
     </div>
 
-
-
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>
